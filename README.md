@@ -10,4 +10,4 @@ Problem Re-Written
 
 For extra credit
 
-    have the squares change to a randon r,g,b value color
+    have the squares change to a randon r,g,b value color each time they are activated
