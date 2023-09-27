@@ -11,18 +11,24 @@ make sure that the total space of the grid stays the same, regardless of the siz
 when a mouse hovers one of the divs
     change color of the div
 */
+
+
+//remove comment to make grid size based on user input
+/*
 let gridSize = 0;
 while(gridSize < 16 || gridSize > 100) {
     gridSize = prompt("Enter a size for the grid, less than 100 and greater than 16:");
 }
+gridSize = gridSize * gridSize;
+*/
 
-
-createGrid(gridSize);
+//switch input to gridSize when that gets un-commented
+createGrid(256);
 
 
 function createGrid(size) {
     for(let i = 0; i < size; i++){
-        const container = document.getElementById('container');
+        const container = document.getElementById("container");
         const newDiv = document.createElement("div");
         newDiv.classList.add("grid");
         container.appendChild(newDiv);
