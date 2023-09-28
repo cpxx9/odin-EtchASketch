@@ -1,4 +1,18 @@
-html {
+body{
+    display: flex;
+}
+#container{
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    height: 500px;
+    width: 500px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.grid{
+    border-style: solid;
     margin: 0px;
     padding: 0px;
 }
