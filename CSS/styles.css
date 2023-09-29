@@ -1,10 +1,27 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
 #container{
     display: flex;
-    justify-self: center;
     align-self: center;
-    height: 500px;
-    width: 500px;
+    height: 512px;
+    width: 512px;
     flex-wrap: wrap;
-    justify-content: space-around;
+}
+
+.title {
+    text-align: center;
+    font-size: 32px;
+    padding: 1%;
+}
+
+.grid {
+    width: 29px;
+    height: 29px;
+    border: 1px solid lightcoral;
 }
 
