@@ -13,23 +13,25 @@ when a mouse hovers one of the divs
 */
 
 
-//remove comment to make grid size based on user input
-/*
 let gridSize = 0;
 while(gridSize < 16 || gridSize > 100) {
     gridSize = prompt("Enter a size for the grid, less than 100 and greater than 16:");
 }
-gridSize = gridSize * gridSize;
-*/
 
-//switch input to gridSize when that gets un-commented
-createGrid(256);
+let gridWidthHeightValue = 512 / parseInt(gridSize);
+gridWidthHeightValue = gridWidthHeightValue + "px";
+
+gridSize = gridSize * gridSize;
+
+createGrid(gridSize);
 
 
 function createGrid(size) {
     for(let i = 0; i < size; i++){
         const container = document.getElementById("container");
         const newDiv = document.createElement("div");
+        newDiv.style.width = gridWidthHeightValue;
+        newDiv.style.height = gridWidthHeightValue;
         newDiv.classList.add("grid");
         container.appendChild(newDiv);
     }
