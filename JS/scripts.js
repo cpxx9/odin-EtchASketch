@@ -25,7 +25,7 @@ createGrid(gridSize);
 
 let gridBox = document.querySelectorAll(".grid");
 gridBox.forEach(box => {
-    box.addEventListener('click', () => box.classList.add("hover"));
+    box.addEventListener('mouseover', () => box.classList.add("hover"));
 });
 
 function createGrid(size) {
