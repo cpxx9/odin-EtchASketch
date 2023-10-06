@@ -21,15 +21,15 @@ while(gridSize < 16 || gridSize > 100) {
 let gridWidthHeightValue = 512 / parseInt(gridSize);
 gridWidthHeightValue = gridWidthHeightValue + "px";
 
-gridSize = gridSize * gridSize;
+createGrid(gridSize);
 
-$('.grid').hover(
-    function(){ $(this).addClass('hover')},
-    function(){ $(this).removeClass('hover') }
-)
+let gridBox = document.querySelectorAll(".grid");
+gridBox.forEach(box => {
+    box.addEventListener('click', () => box.classList.add("hover"));
+});
 
 function createGrid(size) {
-    for(let i = 0; i < size; i++){
+    for(let i = 0; i < (size * size); i++){
         const container = document.getElementById("gridArea");
         const newDiv = document.createElement("div");
         newDiv.style.width = gridWidthHeightValue;
