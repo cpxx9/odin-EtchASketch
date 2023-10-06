@@ -5,27 +5,30 @@ body {
 	font-size: 16px;
 	line-height: 1.6em;
 	margin: 0;
+}
+
+.container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
     gap: 16px;
 }
 
-#container{
+#gridArea{
     display: flex;
-    align-self: center;
     height: 512px;
     width: 512px;
     flex-wrap: wrap;
-    border: 2px solid #333fff
+    border: 2px solid #333fff;
 }
 
 .title {
     text-align: center;
     font-size: 32px;
     padding: 1%;
+    margin-top: 2%;
 }
 
-.grid {
+.hover {
+    background-color: black;
 }
-

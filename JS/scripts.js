@@ -23,17 +23,22 @@ gridWidthHeightValue = gridWidthHeightValue + "px";
 
 gridSize = gridSize * gridSize;
 
-createGrid(gridSize);
-
+$('.grid').hover(
+    function(){ $(this).addClass('hover')},
+    function(){ $(this).removeClass('hover') }
+)
 
 function createGrid(size) {
     for(let i = 0; i < size; i++){
-        const container = document.getElementById("container");
+        const container = document.getElementById("gridArea");
         const newDiv = document.createElement("div");
         newDiv.style.width = gridWidthHeightValue;
         newDiv.style.height = gridWidthHeightValue;
-        newDiv.classList.add("grid");
+        newDiv.classList.add('grid');
         container.appendChild(newDiv);
     }
 }
 
+function refreshPage() {
+    window.location.reload();
+}
