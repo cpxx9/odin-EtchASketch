@@ -12,31 +12,42 @@ when a mouse hovers one of the divs
     change color of the div
 */
 
-
-let gridSize = 0;
-while(gridSize < 16 || gridSize > 100) {
-    gridSize = prompt("Enter a size for the grid, less than 100 and greater than 16:");
-}
-
-let gridWidthHeightValue = 512 / parseInt(gridSize);
-gridWidthHeightValue = gridWidthHeightValue + "px";
-
-createGrid(gridSize);
-
-let gridBox = document.querySelectorAll(".grid");
-gridBox.forEach(box => {
-    box.addEventListener('mouseover', () => box.classList.add("hover"));
-});
+createGrid(16);
 
 function createGrid(size) {
+    let gridWidthHeightValue = 512 / parseInt(size);
+    gridWidthHeightValue = gridWidthHeightValue + "px";
+
     for(let i = 0; i < (size * size); i++){
-        const container = document.getElementById("gridArea");
+        const container = document.getElementById("GRIDAREA");
         const newDiv = document.createElement("div");
+
         newDiv.style.width = gridWidthHeightValue;
         newDiv.style.height = gridWidthHeightValue;
+
         newDiv.classList.add('grid');
+        
         container.appendChild(newDiv);
     }
+
+    let gridBox = document.querySelectorAll(".grid");
+
+    gridBox.forEach(box => {
+        box.addEventListener('mouseover', () => box.classList.add("hover"));
+    });
+}
+
+function resetGame() {
+    const gridAreaDiv = document.getElementById("GRIDAREA");
+    gridAreaDiv.innerHTML = '';   
+
+    let gridSize = 0;
+
+    while(gridSize < 16 || gridSize > 100) {
+        gridSize = prompt("Enter a size for the grid, less than 100 and greater than 16:");
+    }
+
+    createGrid(gridSize);
 }
 
 function refreshPage() {

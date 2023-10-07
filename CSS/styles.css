@@ -14,7 +14,7 @@ body {
     gap: 16px;
 }
 
-#gridArea{
+#GRIDAREA{
     display: flex;
     height: 512px;
     width: 512px;
