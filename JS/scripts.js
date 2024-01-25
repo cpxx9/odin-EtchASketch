@@ -13,6 +13,10 @@ when a mouse hovers one of the divs
 */
 
 createGrid(16);
+let isDrawing = false;
+const playArea = document.querySelector('.playArea');
+playArea.addEventListener('mousedown', () => isDrawing = true);
+playArea.addEventListener('mouseup', () => isDrawing = false);
 
 function createGrid(size) {
     let gridWidthHeightValue = 512 / parseInt(size);
@@ -33,7 +37,11 @@ function createGrid(size) {
     let gridBox = document.querySelectorAll(".grid");
 
     gridBox.forEach(box => {
-        box.addEventListener('mouseover', () => box.classList.add("hover"));
+      box.addEventListener('mouseover', () => {
+        if(isDrawing) {
+          box.classList.add("hover")
+        } 
+      });
     });
 }
 
