@@ -17,6 +17,7 @@ let isDrawing = false;
 const playArea = document.querySelector('.playArea');
 playArea.addEventListener('mousedown', () => isDrawing = true);
 playArea.addEventListener('mouseup', () => isDrawing = false);
+playArea.addEventListener('mouseout', () => isDrawing = false);
 
 function createGrid(size) {
     let gridWidthHeightValue = 512 / parseInt(size);
